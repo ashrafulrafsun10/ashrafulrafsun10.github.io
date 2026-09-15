@@ -1,1576 +1,2032 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* =========================================================
+   GLOBAL RESET & VARIABLES
+========================================================= */
 
-    <meta name="description" content="Ashraful Ferdous Rafsun is an aerospace engineering aspirant, STEM researcher, and developer interested in aerospace, space technology, programming, and engineering.">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <meta name="author" content="Ashraful Ferdous Rafsun">
-    <meta name="robots" content="index, follow">
+:root {
+    --bg: #f7f9fc;
+    --surface: #ffffff;
+    --surface-2: #eef3f8;
 
-    <link rel="canonical" href="https://ashrafulrafsun10.github.io/">
+    --text: #111827;
+    --muted: #64748b;
+    --border: #dbe3ec;
 
-    <title>Ashraful Ferdous Rafsun | Aerospace Engineering Aspirant & Developer</title>
+    --accent: #2563eb;
+    --accent-2: #06b6d4;
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Ashraful Ferdous Rafsun | Portfolio">
-    <meta property="og:description" content="Personal portfolio of Ashraful Ferdous Rafsun — aerospace engineering aspirant, STEM researcher, and developer.">
-    <meta property="og:url" content="https://ashrafulrafsun10.github.io/">
-    <meta property="og:site_name" content="Ashraful Ferdous Rafsun">
+    --shadow: 0 20px 50px rgba(15, 23, 42, 0.10);
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Ashraful Ferdous Rafsun | Portfolio">
-    <meta name="twitter:description" content="Aerospace engineering aspirant, STEM researcher, and developer.">
+    --radius: 20px;
+    --transition: 0.35s ease;
+}
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
+body.dark-mode {
+    --bg: #070b14;
+    --surface: #0f172a;
+    --surface-2: #162033;
 
-<body>
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --border: #263449;
 
-    <!-- ================= NAVBAR ================= -->
+    --accent: #60a5fa;
+    --accent-2: #22d3ee;
 
-    <header class="navbar">
-        <div class="nav-container">
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
 
-            <nav class="nav-links" aria-label="Main navigation">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#education">Education</a>
-                <a href="#activities">Activities</a>
-                <a href="#certifications">Certifications</a>
-                <a href="#contact">Contact</a>
-            </nav>
 
-            <button
-                class="theme-toggle"
-                id="themeToggle"
-                type="button"
-                aria-label="Toggle dark mode"
-            >
-                <span class="theme-icon"></span>
-            </button>
+/* =========================================================
+   BASE
+========================================================= */
 
-        </div>
-    </header>
+html {
+    scroll-behavior: smooth;
+}
 
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
 
-    <main>
+    transition:
+        background var(--transition),
+        color var(--transition);
 
-        <!-- ================= HERO ================= -->
+    overflow-x: hidden;
+}
 
-        <section class="hero" id="home">
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-            <div class="hero-content">
+button {
+    font-family: inherit;
+}
 
-                <p class="hero-label">HELLO, I'M</p>
 
-                <h1>
-                    Ashraful Ferdous
-                    <span>Rafsun</span>
-                </h1>
+/* =========================================================
+   NAVBAR
+========================================================= */
 
-                <h2>
-                    Aerospace Engineering Aspirant & Developer
-                </h2>
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
 
-                <p class="hero-description">
-                    I build interactive web experiences, technology-focused
-                    projects, and creative digital solutions while exploring
-                    aerospace, space technology, programming, and STEM.
-                </p>
+    width: 100%;
 
-                <div class="hero-buttons">
+    z-index: 1000;
 
-                    <a href="#projects" class="btn primary-btn">
-                        View My Projects
-                    </a>
+    background: rgba(247, 249, 252, 0.82);
 
-                    <a href="#contact" class="btn secondary-btn">
-                        Contact Me
-                    </a>
+    backdrop-filter: blur(18px);
 
-                </div>
+    border-bottom: 1px solid var(--border);
 
-                <div class="social-links">
+    transition: var(--transition);
+}
 
-                    <a
-                        href="https://github.com/ashrafulrafsun10/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        GitHub
-                    </a>
+body.dark-mode .navbar {
+    background: rgba(7, 11, 20, 0.82);
+}
 
-                    <a
-                        href="https://www.linkedin.com/in/ashrafulferdousrafsun/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        LinkedIn
-                    </a>
+.nav-container {
+    width: min(1180px, 92%);
 
-                    <a
-                        href="./RAFSUN%20FINAL%20RESUME%20(2).pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Resume
-                    </a>
+    margin: auto;
 
-                </div>
+    min-height: 76px;
 
-            </div>
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+    gap: 30px;
+}
 
-            <!-- HERO PHOTO / VISUAL -->
 
-            <div class="hero-visual">
+/* Navigation links */
 
-                <!-- Orbit animations -->
-                <div class="hero-orbit orbit-outer"></div>
-                <div class="hero-orbit orbit-middle"></div>
-                <div class="hero-orbit orbit-inner"></div>
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
 
-                <div class="orbit-dot"></div>
+.nav-links a {
+    position: relative;
 
+    color: var(--muted);
 
-                <!-- Profile Photo -->
+    font-size: 14px;
+    font-weight: 600;
 
-                <div class="profile-wrap">
+    transition: var(--transition);
+}
 
-                    <img
-                        src="images/profile.jpg"
-                        alt="Ashraful Ferdous Rafsun"
-                        class="profile-photo"
-                    >
+.nav-links a::after {
+    content: "";
 
-                    <div class="profile-glow"></div>
+    position: absolute;
 
-                </div>
+    left: 0;
+    bottom: -8px;
 
+    width: 0;
+    height: 2px;
 
-                <!-- Developer Card -->
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent),
+            var(--accent-2)
+        );
 
-                <div class="hero-card">
+    transition: var(--transition);
+}
 
-                    <div class="code-line">
-                        &lt;developer&gt;
-                    </div>
+.nav-links a:hover {
+    color: var(--text);
+}
 
-                    <div class="code-line">
-                        Building the future
-                    </div>
+.nav-links a:hover::after {
+    width: 100%;
+}
 
-                    <div class="code-line">
-                        one project at a time.
-                    </div>
 
-                    <div class="code-line">
-                        &lt;/developer&gt;
-                    </div>
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
 
-                </div>
+.theme-toggle {
+    width: 44px;
+    height: 44px;
 
-            </div>
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        </section>
+    border: 1px solid var(--border);
 
+    border-radius: 50%;
 
-        <!-- ================= ABOUT ================= -->
+    background: var(--surface);
+    color: var(--text);
 
-        <section class="section" id="about">
+    cursor: pointer;
 
-            <div class="section-heading">
+    transition: 0.3s ease;
+}
 
-                <p>ABOUT ME</p>
+.theme-toggle:hover {
+    border-color: var(--accent);
 
-                <h2>
-                    Building With Curiosity, Creativity & Purpose
-                </h2>
+    transform: translateY(-2px);
+}
 
-            </div>
+.theme-icon {
+    width: 17px;
+    height: 17px;
 
+    border: 2px solid currentColor;
 
-            <div class="about-grid">
+    border-radius: 50%;
 
-                <div class="about-text">
+    position: relative;
 
-                    <p class="about-intro">
-                        I am an aspiring aerospace engineer and frontend
-                        developer with a strong interest in aerospace,
-                        space technology, programming, and STEM.
-                    </p>
+    transition: 0.3s ease;
+}
 
-                    <p>
-                        I enjoy turning ideas into practical projects.
-                        My work includes interactive web applications,
-                        space-focused tools, simulations, educational
-                        applications, and computational projects built
-                        using HTML, CSS, JavaScript, and other technologies.
-                    </p>
+.theme-icon::before {
+    content: "";
 
-                    <p>
-                        Beyond coding, I am deeply interested in aircraft
-                        and space technology. I enjoy exploring engineering
-                        concepts, experimenting with technology, and learning
-                        through hands-on projects rather than relying only
-                        on theory.
-                    </p>
+    position: absolute;
 
-                    <p>
-                        I also explore photography, football, and freshwater
-                        aquarium ecosystem management. These activities help
-                        me develop creativity, teamwork, observation,
-                        patience, and practical problem-solving skills
-                        outside academics.
-                    </p>
+    inset: -6px;
 
-                    <p>
-                        Currently, I am pursuing my higher secondary education
-                        in the Science group at Uttara High School and College
-                        while continuing to build my technical skills,
-                        projects, and experience for the future.
-                    </p>
+    border-radius: 50%;
 
+    background:
+        linear-gradient(currentColor, currentColor)
+        center top / 2px 4px no-repeat,
 
-                    <div class="about-focus">
+        linear-gradient(currentColor, currentColor)
+        center bottom / 2px 4px no-repeat,
 
-                        <div class="focus-item">
+        linear-gradient(90deg, currentColor, currentColor)
+        left center / 4px 2px no-repeat,
 
-                            <span>01</span>
+        linear-gradient(90deg, currentColor, currentColor)
+        right center / 4px 2px no-repeat;
 
-                            <div>
-                                <h3>Aerospace & Space</h3>
+    opacity: 0;
 
-                                <p>
-                                    Exploring aircraft design, space technology,
-                                    and engineering concepts.
-                                </p>
-                            </div>
+    transition: 0.3s ease;
+}
 
-                        </div>
+body.dark-mode .theme-icon {
+    width: 18px;
+    height: 18px;
 
+    border: none;
 
-                        <div class="focus-item">
+    background: currentColor;
 
-                            <span>02</span>
+    border-radius: 50%;
+}
 
-                            <div>
-                                <h3>Web Development</h3>
+body.dark-mode .theme-icon::before {
+    opacity: 1;
 
-                                <p>
-                                    Building responsive and interactive web
-                                    applications through hands-on projects.
-                                </p>
-                            </div>
+    inset: -2px;
 
-                        </div>
+    background: var(--surface);
 
+    transform: translate(5px, -4px);
+}
 
-                        <div class="focus-item">
 
-                            <span>03</span>
+/* =========================================================
+   HERO SECTION
+========================================================= */
 
-                            <div>
-                                <h3>Continuous Learning</h3>
+.hero {
+    width: min(1180px, 92%);
 
-                                <p>
-                                    Developing technical and problem-solving
-                                    skills through projects and self-directed
-                                    learning.
-                                </p>
-                            </div>
+    min-height: 100vh;
 
-                        </div>
+    margin: auto;
 
-                    </div>
+    padding-top: 130px;
 
-                </div>
+    display: grid;
 
+    grid-template-columns: 1.15fr 0.85fr;
 
-                <!-- ABOUT STATS -->
+    align-items: center;
 
-                <div class="about-stats">
+    gap: 55px;
 
-                    <div class="stat-card">
-                        <strong>08</strong>
-                        <span>Projects</span>
-                    </div>
+    position: relative;
+}
 
-                    <div class="stat-card">
-                        <strong>06</strong>
-                        <span>Activities & ECAs</span>
-                    </div>
+.hero::before {
+    content: "";
 
-                    <div class="stat-card">
-                        <strong>08</strong>
-                        <span>Certifications</span>
-                    </div>
+    position: absolute;
 
-                    <div class="stat-card">
-                        <strong>01</strong>
-                        <span>Photography Portfolio</span>
-                    </div>
+    width: 420px;
+    height: 420px;
 
-                    <div class="stat-card">
-                        <strong>∞</strong>
-                        <span>Ideas</span>
-                    </div>
+    top: 12%;
+    left: -180px;
 
-                </div>
+    background: rgba(37, 99, 235, 0.10);
 
-            </div>
+    filter: blur(90px);
 
-        </section>
+    border-radius: 50%;
 
+    pointer-events: none;
+}
 
-        <!-- ================= SKILLS ================= -->
 
-        <section class="section" id="skills">
+/* Hero text */
 
-            <div class="section-heading">
+.hero-content {
+    position: relative;
 
-                <p>MY SKILLS</p>
+    z-index: 2;
 
-                <h2>
-                    Technologies I Work With
-                </h2>
+    animation:
+        heroText 0.9s ease both;
+}
 
-            </div>
+.hero-label {
+    margin-bottom: 15px;
 
+    color: var(--accent);
 
-            <div class="skills-grid">
+    font-size: 13px;
 
-                <div class="skill-card">
-                    <span>01</span>
-                    <h3>HTML5</h3>
-                    <p>
-                        Semantic and structured web pages.
-                    </p>
-                </div>
+    font-weight: 800;
 
+    letter-spacing: 4px;
+}
 
-                <div class="skill-card">
-                    <span>02</span>
-                    <h3>CSS3</h3>
-                    <p>
-                        Responsive layouts, animations, and modern interfaces.
-                    </p>
-                </div>
+.hero h1 {
+    max-width: 760px;
 
+    font-family: "Space Grotesk", sans-serif;
 
-                <div class="skill-card">
-                    <span>03</span>
-                    <h3>JavaScript</h3>
-                    <p>
-                        Interactive interfaces and dynamic web functionality.
-                    </p>
-                </div>
+    font-size: clamp(48px, 7vw, 82px);
 
+    line-height: 0.98;
 
-                <div class="skill-card">
-                    <span>04</span>
-                    <h3>Git & GitHub</h3>
-                    <p>
-                        Version control and project management.
-                    </p>
-                </div>
+    letter-spacing: -3px;
 
+    margin-bottom: 24px;
+}
 
-                <div class="skill-card">
-                    <span>05</span>
-                    <h3>Canvas</h3>
-                    <p>
-                        Interactive visualizations and animations.
-                    </p>
-                </div>
+.hero h1 span {
+    display: block;
 
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent),
+            var(--accent-2)
+        );
 
-                <div class="skill-card">
-                    <span>06</span>
-                    <h3>UI Design</h3>
-                    <p>
-                        Clean, modern, and user-focused interfaces.
-                    </p>
-                </div>
+    -webkit-background-clip: text;
+    background-clip: text;
 
-            </div>
+    color: transparent;
+}
 
-        </section>
+.hero h2 {
+    margin-bottom: 18px;
 
+    font-size: 22px;
 
-        <!-- ================= PROJECTS ================= -->
+    font-weight: 600;
 
-        <section class="section" id="projects">
+    color: var(--muted);
+}
 
-            <div class="section-heading">
+.hero-description {
+    max-width: 620px;
 
-                <p>MY WORK</p>
+    margin-bottom: 30px;
 
-                <h2>
-                    Featured Projects
-                </h2>
+    color: var(--muted);
 
-            </div>
+    font-size: 16px;
+}
 
 
-            <div class="projects-grid">
+/* Hero buttons */
 
+.hero-buttons {
+    display: flex;
 
-                <!-- Project 01 -->
+    flex-wrap: wrap;
 
-                <article class="project-card">
+    gap: 14px;
 
-                    <div class="project-number">
-                        01
-                    </div>
+    margin-bottom: 25px;
+}
 
-                    <div class="project-content">
+.btn {
+    display: inline-flex;
 
-                        <p class="project-category">
-                            JAVASCRIPT • CANVAS
-                        </p>
+    align-items: center;
+    justify-content: center;
 
-                        <h3>
-                            NASA Mission Control Dashboard
-                        </h3>
+    padding: 13px 22px;
 
-                        <p>
-                            An interactive NASA-inspired mission control
-                            dashboard featuring rocket launch animation,
-                            countdown controls, live telemetry, mission
-                            status monitoring, orbit visualization,
-                            and mission logs.
-                        </p>
+    border-radius: 12px;
 
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Canvas</span>
-                        </div>
+    font-size: 14px;
 
-                        <div class="project-links">
+    font-weight: 700;
 
-                            <a
-                                href="https://ashrafulrafsun10.github.io/nasa-mission-control-dashboard/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Live Demo →
-                            </a>
+    transition: var(--transition);
+}
 
-                            <a
-                                href="https://github.com/ashrafulrafsun10/nasa-mission-control-dashboard"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                GitHub →
-                            </a>
+.primary-btn {
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent-2)
+        );
 
-                        </div>
+    color: #ffffff;
 
-                    </div>
+    box-shadow:
+        0 10px 30px rgba(37, 99, 235, 0.20);
+}
 
-                </article>
+.primary-btn:hover {
+    transform: translateY(-4px);
 
+    box-shadow:
+        0 15px 35px rgba(37, 99, 235, 0.30);
+}
 
-                <!-- Project 02 -->
+.secondary-btn {
+    border: 1px solid var(--border);
 
-                <article class="project-card">
+    background: var(--surface);
 
-                    <div class="project-number">
-                        02
-                    </div>
+    color: var(--text);
+}
 
-                    <div class="project-content">
+.secondary-btn:hover {
+    transform: translateY(-4px);
 
-                        <p class="project-category">
-                            JAVASCRIPT • EDUCATION
-                        </p>
+    border-color: var(--accent);
+}
 
-                        <h3>
-                            Scholarship Eligibility Checker
-                        </h3>
 
-                        <p>
-                            An interactive web application designed to help
-                            students evaluate scholarship eligibility using
-                            user-provided academic and profile information.
-                        </p>
+/* Social links */
 
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
+.social-links {
+    display: flex;
 
-                        <div class="project-links">
+    gap: 22px;
+}
 
-                            <a
-                                href="https://ashrafulrafsun10.github.io/scholarship-eligibility-checker/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Live Demo →
-                            </a>
+.social-links a {
+    color: var(--muted);
 
-                            <a
-                                href="https://github.com/ashrafulrafsun10/scholarship-eligibility-checker"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                GitHub →
-                            </a>
+    font-size: 14px;
 
-                        </div>
+    font-weight: 600;
 
-                    </div>
+    transition: var(--transition);
+}
 
-                </article>
+.social-links a:hover {
+    color: var(--accent);
+}
 
 
-                <!-- Project 03 -->
+/* =========================================================
+   HERO VISUAL + PROFILE PHOTO
+========================================================= */
 
-                <article class="project-card">
+.hero-visual {
+    min-height: 500px;
 
-                    <div class="project-number">
-                        03
-                    </div>
+    display: flex;
 
-                    <div class="project-content">
+    align-items: center;
+    justify-content: center;
 
-                        <p class="project-category">
-                            JAVASCRIPT • EDUCATION
-                        </p>
+    position: relative;
 
-                        <h3>
-                            Global GPA Converter
-                        </h3>
+    animation:
+        heroVisual 1s ease 0.15s both;
+}
 
-                        <p>
-                            A responsive GPA conversion tool that converts
-                            academic results between grading systems with
-                            interactive calculations, result visualization,
-                            and theme support.
-                        </p>
 
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
+/* Orbit rings */
 
-                        <div class="project-links">
+.hero-orbit {
+    position: absolute;
 
-                            <a
-                                href="https://ashrafulrafsun10.github.io/global-gpa-converter/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Live Demo →
-                            </a>
+    border: 1px solid var(--border);
 
-                            <a
-                                href="https://github.com/ashrafulrafsun10/global-gpa-converter"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                GitHub →
-                            </a>
+    border-radius: 50%;
 
-                        </div>
+    pointer-events: none;
+}
 
-                    </div>
+.orbit-outer {
+    width: 430px;
+    height: 430px;
 
-                </article>
+    animation:
+        orbitRotate 24s linear infinite;
+}
 
+.orbit-middle {
+    width: 350px;
+    height: 350px;
 
-                <!-- Project 04 -->
+    border-color: rgba(37, 99, 235, 0.25);
 
-                <article class="project-card">
+    animation:
+        orbitRotateReverse 18s linear infinite;
+}
 
-                    <div class="project-number">
-                        04
-                    </div>
+.orbit-inner {
+    width: 275px;
+    height: 275px;
 
-                    <div class="project-content">
+    border-color: rgba(6, 182, 212, 0.20);
+}
 
-                        <p class="project-category">
-                            SPACE • JAVASCRIPT
-                        </p>
 
-                        <h3>
-                            ISS Live Satellite Tracker
-                        </h3>
+/* Orbit glowing dot */
 
-                        <p>
-                            An interactive space-tracking project focused
-                            on visualizing the position and movement of the
-                            International Space Station using a browser-based
-                            interface.
-                        </p>
+.orbit-dot {
+    position: absolute;
 
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
+    width: 13px;
+    height: 13px;
 
-                        <div class="project-links">
+    top: calc(50% - 215px);
 
-                            <a
-                                href="https://ashrafulrafsun10.github.io/ISS-Live-Satellite-Tracker/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Live Demo →
-                            </a>
+    left: 50%;
 
-                            <a
-                                href="https://github.com/ashrafulrafsun10/ISS-Live-Satellite-Tracker"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                GitHub →
-                            </a>
+    transform: translateX(-50%);
 
-                        </div>
+    border-radius: 50%;
 
-                    </div>
+    background: var(--accent-2);
 
-                </article>
+    box-shadow:
+        0 0 15px var(--accent-2),
+        0 0 35px rgba(34, 211, 238, 0.4);
 
+    z-index: 4;
+}
 
-                <!-- Project 05 -->
 
-                <article class="project-card">
+/* Profile image container */
 
-                    <div class="project-number">
-                        05
-                    </div>
+.profile-wrap {
+    position: relative;
 
-                    <div class="project-content">
+    z-index: 2;
 
-                        <p class="project-category">
-                            SPACE • JAVASCRIPT
-                        </p>
+    width: 300px;
+    height: 300px;
 
-                        <h3>
-                            AstroLaunch — Live Space Launch Tracker
-                        </h3>
+    border-radius: 50%;
 
-                        <p>
-                            A space-focused web application designed to
-                            present upcoming and relevant space launch
-                            information through an interactive browser-based
-                            dashboard.
-                        </p>
+    display: flex;
 
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
+    align-items: center;
+    justify-content: center;
+}
 
-                        <div class="project-links">
 
-                            <a
-                                href="https://ashrafulrafsun10.github.io/AstroLaunch-Live-Space-Launch-Tracker/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Live Demo →
-                            </a>
+/* Profile image */
 
-                            <a
-                                href="https://github.com/ashrafulrafsun10/AstroLaunch-Live-Space-Launch-Tracker"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                GitHub →
-                            </a>
+.profile-photo {
+    width: 270px;
+    height: 270px;
 
-                        </div>
+    object-fit: cover;
 
-                    </div>
+    object-position: center top;
 
-                </article>
+    border-radius: 50%;
 
+    border: 2px solid var(--accent);
 
-                <!-- Project 06 -->
+    box-shadow:
+        0 0 35px rgba(37, 99, 235, 0.30),
+        0 0 80px rgba(6, 182, 212, 0.10);
 
-                <article class="project-card">
+    position: relative;
 
-                    <div class="project-number">
-                        06
-                    </div>
+    z-index: 3;
 
-                    <div class="project-content">
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
 
-                        <p class="project-category">
-                            JAVASCRIPT • EDUCATION
-                        </p>
+.profile-photo:hover {
+    transform: scale(1.025);
 
-                        <h3>
-                            SAT Score Predictor
-                        </h3>
+    box-shadow:
+        0 0 45px rgba(37, 99, 235, 0.40),
+        0 0 100px rgba(6, 182, 212, 0.15);
+}
 
-                        <p>
-                            An interactive educational tool designed to
-                            estimate SAT performance from user inputs and
-                            present the resulting score information through
-                            a simple interface.
-                        </p>
 
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
+/* Photo glow */
 
-                        <div class="project-links">
+.profile-glow {
+    position: absolute;
 
-                            <a
-                                href="https://ashrafulrafsun10.github.io/sat-score-predictor/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Live Demo →
-                            </a>
+    width: 245px;
+    height: 245px;
 
-                            <a
-                                href="https://github.com/ashrafulrafsun10/sat-score-predictor"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                GitHub →
-                            </a>
+    border-radius: 50%;
 
-                        </div>
+    background: rgba(37, 99, 235, 0.14);
 
-                    </div>
+    filter: blur(30px);
 
-                </article>
+    z-index: 1;
 
+    pointer-events: none;
+}
 
-                <!-- Project 07 -->
 
-                <article class="project-card">
+/* Developer card */
 
-                    <div class="project-number">
-                        07
-                    </div>
+.hero-card {
+    position: absolute;
 
-                    <div class="project-content">
+    right: -8px;
+    bottom: 48px;
 
-                        <p class="project-category">
-                            AEROSPACE • CALCULATOR
-                        </p>
+    z-index: 5;
 
-                        <h3>
-                            AeroPerf — Aircraft Performance Calculator
-                        </h3>
+    width: 275px;
 
-                        <p>
-                            An aerospace-focused calculator project designed
-                            to explore aircraft performance parameters and
-                            demonstrate the application of computational
-                            concepts in aviation.
-                        </p>
+    padding: 22px;
 
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
+    border-radius: 18px;
 
-                        <div class="project-links">
+    background:
+        color-mix(
+            in srgb,
+            var(--surface) 94%,
+            transparent
+        );
 
-                            <a
-                                href="https://ashrafulrafsun10.github.io/AeroPerf-Aircraft-Performance-Calculator/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Live Demo →
-                            </a>
+    border: 1px solid var(--border);
 
-                            <a
-                                href="https://github.com/ashrafulrafsun10/AeroPerf-Aircraft-Performance-Calculator"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                GitHub →
-                            </a>
+    box-shadow: var(--shadow);
 
-                        </div>
+    font-family: "Space Grotesk", sans-serif;
 
-                    </div>
+    transform: rotate(3deg);
 
-                </article>
+    transition: var(--transition);
+}
 
+.hero-card:hover {
+    transform:
+        rotate(0)
+        translateY(-8px);
+}
 
-                <!-- Project 08 -->
+.code-line {
+    margin: 7px 0;
 
-                <article class="project-card">
+    color: var(--muted);
 
-                    <div class="project-number">
-                        08
-                    </div>
+    font-size: 14px;
+}
 
-                    <div class="project-content">
+.code-line:first-child,
+.code-line:last-child {
+    color: var(--accent);
+}
 
-                        <p class="project-category">
-                            SPACE • SIMULATION
-                        </p>
 
-                        <h3>
-                            Rocket Trajectory Simulator
-                        </h3>
+/* =========================================================
+   HERO ANIMATIONS
+========================================================= */
 
-                        <p>
-                            A browser-based simulation project that
-                            demonstrates rocket trajectory concepts through
-                            interactive motion visualization and computational
-                            modeling.
-                        </p>
+@keyframes orbitRotate {
 
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
+    from {
+        transform: rotate(0);
+    }
 
-                        <div class="project-links">
+    to {
+        transform: rotate(360deg);
+    }
 
-                            <a
-                                href="https://ashrafulrafsun10.github.io/rocket-trajectory-simulator/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Live Demo →
-                            </a>
+}
 
-                            <a
-                                href="https://github.com/ashrafulrafsun10/rocket-trajectory-simulator"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                GitHub →
-                            </a>
+@keyframes orbitRotateReverse {
 
-                        </div>
+    from {
+        transform: rotate(360deg);
+    }
 
-                    </div>
+    to {
+        transform: rotate(0);
+    }
 
-                </article>
+}
 
-            </div>
+@keyframes heroText {
 
-        </section>
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-        <!-- ================= EDUCATION ================= -->
+}
 
-        <section class="section" id="education">
+@keyframes heroVisual {
 
-            <div class="section-heading">
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
 
-                <p>EDUCATION</p>
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 
-                <h2>
-                    Academic Journey
-                </h2>
+}
 
-            </div>
 
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
 
-            <div class="timeline">
+.section {
+    width: min(1180px, 92%);
 
+    margin: auto;
 
-                <div class="timeline-item">
+    padding: 110px 0;
+}
 
-                    <div class="timeline-dot"></div>
+.section-heading {
+    margin-bottom: 55px;
+}
 
-                    <div class="timeline-content">
+.section-heading p {
+    margin-bottom: 10px;
 
-                        <span>
-                            CURRENT • 2026 – PRESENT
-                        </span>
+    color: var(--accent);
 
-                        <h3>
-                            Higher Secondary Certificate (HSC) — Science
-                        </h3>
+    font-size: 12px;
 
-                        <p>
-                            Uttara High School and College
-                        </p>
+    font-weight: 800;
 
-                        <p>
-                            Currently pursuing higher secondary education
-                            in the Science group while continuing to develop
-                            interests in STEM, aerospace, programming,
-                            and technology.
-                        </p>
+    letter-spacing: 4px;
+}
 
-                    </div>
+.section-heading h2 {
+    font-family: "Space Grotesk", sans-serif;
 
-                </div>
+    font-size: clamp(32px, 5vw, 48px);
 
+    line-height: 1.1;
 
-                <div class="timeline-item">
+    letter-spacing: -1.5px;
+}
 
-                    <div class="timeline-dot"></div>
 
-                    <div class="timeline-content">
+/* =========================================================
+   ABOUT
+========================================================= */
 
-                        <span>
-                            COMPLETED • 2026
-                        </span>
+.about-grid {
+    display: grid;
 
-                        <h3>
-                            Secondary School Certificate (SSC)
-                        </h3>
+    grid-template-columns: 1fr 0.8fr;
 
-                        <p>
-                            Completed secondary school education in 2026
-                            with a GPA of 4.39 in the Science group.
-                        </p>
+    gap: 70px;
 
-                    </div>
+    align-items: center;
+}
 
-                </div>
+.about-text p {
+    margin-bottom: 20px;
 
+    color: var(--muted);
 
-                <div class="timeline-item">
+    font-size: 16px;
+}
 
-                    <div class="timeline-dot"></div>
+.about-stats {
+    display: grid;
 
-                    <div class="timeline-content">
+    grid-template-columns:
+        repeat(3, 1fr);
 
-                        <span>
-                            DEVELOPMENT
-                        </span>
+    gap: 14px;
+}
 
-                        <h3>
-                            Self-Directed Technology Learning
-                        </h3>
+.stat-card {
+    padding: 25px 15px;
 
-                        <p>
-                            Learning web development through hands-on
-                            projects, online courses, GitHub, and practical
-                            experimentation.
-                        </p>
+    border: 1px solid var(--border);
 
-                    </div>
+    border-radius: var(--radius);
 
-                </div>
+    background: var(--surface);
 
-            </div>
+    text-align: center;
 
-        </section>
+    box-shadow: var(--shadow);
 
+    transition: var(--transition);
+}
 
-        <!-- ================= ACTIVITIES ================= -->
+.stat-card:hover {
+    transform: translateY(-7px);
 
-        <section class="section" id="activities">
+    border-color: var(--accent);
+}
 
-            <div class="section-heading">
+.stat-card strong {
+    display: block;
 
-                <p>EXTRACURRICULAR</p>
+    margin-bottom: 7px;
 
-                <h2>
-                    Activities & Achievements
-                </h2>
+    color: var(--accent);
 
-            </div>
+    font-family: "Space Grotesk", sans-serif;
 
+    font-size: 32px;
+}
 
-            <div class="activity-grid">
+.stat-card span {
+    color: var(--muted);
 
+    font-size: 12px;
 
-                <!-- Activity 01 -->
+    font-weight: 600;
 
-                <div class="activity-card">
+    text-transform: uppercase;
 
-                    <span class="activity-number">
-                        01
-                    </span>
+    letter-spacing: 1px;
+}
 
-                    <img
-                        src="images/football.jpeg"
-                        alt="School and Local Soccer Player"
-                        class="activity-image"
-                    >
 
-                    <h3>
-                        School & Local Soccer Player
-                    </h3>
+/* About focus */
 
-                    <p>
-                        Represented the school football team, actively
-                        played for a local club, and won a local tournament
-                        championship.
-                    </p>
+.about-focus {
+    margin-top: 30px;
+}
 
-                </div>
+.focus-item {
+    display: flex;
 
+    gap: 18px;
 
-                <!-- Activity 02 -->
+    padding: 18px 0;
 
-                <div class="activity-card">
+    border-top: 1px solid var(--border);
+}
 
-                    <span class="activity-number">
-                        02
-                    </span>
+.focus-item > span {
+    color: var(--accent);
 
-                    <img
-                        src="images/rajuk-scispark.jpeg"
-                        alt="RAJUK National SciSpark 4.0"
-                        class="activity-image"
-                    >
+    font-weight: 800;
+}
 
-                    <h3>
-                        RAJUK National SciSpark 4.0
-                    </h3>
+.focus-item h3 {
+    font-family: "Space Grotesk", sans-serif;
+}
 
-                    <p>
-                        Participated in RAJUK National SciSpark 4.0,
-                        gaining experience in STEM-focused innovation,
-                        project presentation, and collaborative
-                        problem-solving. Additionally, competed in the
-                        Chemistry and Biology Olympiads at the event.
-                    </p>
+.focus-item p {
+    margin: 4px 0 0 !important;
 
-                </div>
+    font-size: 14px !important;
+}
 
 
-                <!-- Activity 03 -->
+/* =========================================================
+   SKILLS
+========================================================= */
 
-                <div class="activity-card">
+.skills-grid {
+    display: grid;
 
-                    <span class="activity-number">
-                        03
-                    </span>
+    grid-template-columns:
+        repeat(3, 1fr);
 
-                    <img
-                        src="images/photography.jpeg"
-                        alt="Nature and Landscape Photography"
-                        class="activity-image"
-                    >
+    gap: 20px;
+}
 
-                    <h3>
-                        Photography
-                    </h3>
+.skill-card {
+    position: relative;
 
-                    <p>
-                        Exploring photography to develop visual storytelling,
-                        composition, creativity, and attention to detail
-                        through real-world photography.
-                    </p>
+    padding: 30px;
 
-                    <a
-                        href="https://500px.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="activity-link"
-                    >
-                        View Photography Portfolio →
-                    </a>
+    min-height: 190px;
 
-                </div>
+    border: 1px solid var(--border);
 
+    border-radius: var(--radius);
 
-                <!-- Activity 04 -->
+    background: var(--surface);
 
-                <div class="activity-card">
+    box-shadow: var(--shadow);
 
-                    <span class="activity-number">
-                        04
-                    </span>
+    overflow: hidden;
 
-                    <img
-                        src="images/aquarium.jpeg"
-                        alt="Freshwater Aquarium Ecosystem"
-                        class="activity-image"
-                    >
+    transition: var(--transition);
+}
 
-                    <h3>
-                        Aquarium Ecosystem Management
-                    </h3>
+.skill-card::before {
+    content: "";
 
-                    <p>
-                        Maintain a freshwater aquarium by monitoring pH,
-                        ammonia, nitrite, nitrate, chlorine, and temperature.
-                        Apply water chemistry and biological filtration
-                        principles to maintain a stable aquatic ecosystem.
-                    </p>
+    position: absolute;
 
-                </div>
+    top: 0;
+    left: 0;
 
+    width: 100%;
+    height: 3px;
 
-                <!-- Activity 05 -->
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent),
+            var(--accent-2)
+        );
 
-                <div class="activity-card">
+    transform: scaleX(0);
 
-                    <span class="activity-number">
-                        05
-                    </span>
+    transform-origin: left;
 
-                    <img
-                        src="images/ssc-crest.jpeg"
-                        alt="Academic Excellence Award Crest"
-                        class="activity-image"
-                    >
+    transition: var(--transition);
+}
 
-                    <h3>
-                        Academic Excellence Award (SSC Science)
-                    </h3>
+.skill-card:hover {
+    transform: translateY(-8px);
 
-                    <p>
-                        Honored with a prestige crest of distinction from
-                        Bazlul Huq Khan School and College for achieving a
-                        GPA of 4.39 in the Science group at the SSC
-                        Examination 2026.
-                    </p>
+    border-color: var(--accent);
+}
 
-                </div>
+.skill-card:hover::before {
+    transform: scaleX(1);
+}
 
+.skill-card > span {
+    color: var(--accent);
 
-                <!-- Activity 06 -->
+    font-size: 12px;
 
-                <div class="activity-card">
+    font-weight: 800;
 
-                    <span class="activity-number">
-                        06
-                    </span>
+    letter-spacing: 2px;
+}
 
-                    <img
-                        src="images/cambrian-medal.jpeg"
-                        alt="Cambrian Outstanding Result Medal"
-                        class="activity-image"
-                    >
+.skill-card h3 {
+    margin: 25px 0 10px;
 
-                    <h3>
-                        Outstanding Result Medal & EMU Scholarship
-                    </h3>
+    font-family: "Space Grotesk", sans-serif;
 
-                    <p>
-                        Awarded a special commemorative merit medal from
-                        AALCCO - Cambrian Education Group for outstanding
-                        secondary academic performance, concurrently
-                        securing the EMU Project-2028 Scholarship.
-                    </p>
+    font-size: 22px;
+}
 
-                </div>
+.skill-card p {
+    color: var(--muted);
 
-            </div>
+    font-size: 14px;
+}
 
-        </section>
 
+/* =========================================================
+   PROJECTS
+========================================================= */
 
-        <!-- ================= CERTIFICATIONS ================= -->
+.projects-grid {
+    display: grid;
 
-        <section class="section" id="certifications">
+    grid-template-columns:
+        repeat(2, 1fr);
 
-            <div class="section-heading">
+    gap: 22px;
+}
 
-                <p>CERTIFICATIONS</p>
+.project-card {
+    position: relative;
 
-                <h2>
-                    Certificates & Learning
-                </h2>
+    min-height: 430px;
 
-            </div>
+    padding: 35px;
 
+    border: 1px solid var(--border);
 
-            <div class="certificate-grid">
+    border-radius: var(--radius);
 
+    background: var(--surface);
 
-                <!-- Certificate 01 -->
+    box-shadow: var(--shadow);
 
-                <div class="certificate-card">
+    overflow: hidden;
 
-                    <span class="certificate-number">
-                        01
-                    </span>
+    transition: var(--transition);
+}
 
-                    <div class="certificate-content">
+.project-card::before {
+    content: "";
 
-                        <h3>
-                            Aircraft Designing
-                        </h3>
+    position: absolute;
 
-                        <p class="certificate-provider">
-                            Alison
-                        </p>
+    width: 200px;
+    height: 200px;
 
-                        <p>
-                            Completed an online course focused on aircraft
-                            designing and fundamental aerospace concepts.
-                        </p>
+    right: -90px;
+    bottom: -90px;
 
-                    </div>
+    border-radius: 50%;
 
-                </div>
+    background: rgba(37, 99, 235, 0.08);
 
+    transition: var(--transition);
+}
 
-                <!-- Certificate 02 -->
+.project-card:hover {
+    transform: translateY(-8px);
 
-                <div class="certificate-card">
+    border-color: var(--accent);
+}
 
-                    <span class="certificate-number">
-                        02
-                    </span>
+.project-card:hover::before {
+    transform: scale(1.4);
+}
 
-                    <div class="certificate-content">
+.project-number {
+    color: var(--accent);
 
-                        <h3>
-                            Business Email Writing
-                        </h3>
+    font-family: "Space Grotesk", sans-serif;
 
-                        <p class="certificate-provider">
-                            HP LIFE
-                        </p>
+    font-size: 14px;
 
-                        <p>
-                            Developed professional written communication
-                            skills with a focus on effective business
-                            email writing.
-                        </p>
+    font-weight: 800;
 
-                    </div>
+    letter-spacing: 2px;
+}
 
-                </div>
+.project-content {
+    position: relative;
 
+    z-index: 2;
 
-                <!-- Certificate 03 -->
+    margin-top: 55px;
+}
 
-                <div class="certificate-card">
+.project-category {
+    margin-bottom: 10px;
 
-                    <span class="certificate-number">
-                        03
-                    </span>
+    color: var(--accent-2);
 
-                    <div class="certificate-content">
+    font-size: 11px;
 
-                        <h3>
-                            Critical Thinking in the AI Era
-                        </h3>
+    font-weight: 800;
 
-                        <p class="certificate-provider">
-                            HP LIFE
-                        </p>
+    letter-spacing: 2px;
+}
 
-                        <p>
-                            Developed critical thinking skills for evaluating
-                            information and making informed decisions in the
-                            age of AI.
-                        </p>
+.project-content h3 {
+    margin-bottom: 15px;
 
-                    </div>
+    font-family: "Space Grotesk", sans-serif;
 
-                </div>
+    font-size: 27px;
 
+    line-height: 1.2;
+}
 
-                <!-- Certificate 04 -->
+.project-content > p:not(.project-category) {
+    margin-bottom: 22px;
 
-                <div class="certificate-card">
+    color: var(--muted);
 
-                    <span class="certificate-number">
-                        04
-                    </span>
+    font-size: 14px;
+}
 
-                    <div class="certificate-content">
+.project-tags {
+    display: flex;
 
-                        <h3>
-                            Money Management
-                        </h3>
+    flex-wrap: wrap;
 
-                        <p class="certificate-provider">
-                            10 Minute School
-                        </p>
+    gap: 8px;
 
-                        <p>
-                            Completed learning focused on fundamental
-                            personal finance and money management concepts.
-                        </p>
+    margin-bottom: 25px;
+}
 
-                    </div>
+.project-tags span {
+    padding: 6px 10px;
 
-                </div>
+    border: 1px solid var(--border);
 
+    border-radius: 20px;
 
-                <!-- Certificate 05 -->
+    color: var(--muted);
 
-                <div class="certificate-card">
+    font-size: 11px;
 
-                    <span class="certificate-number">
-                        05
-                    </span>
+    font-weight: 600;
+}
 
-                    <div class="certificate-content">
+.project-links {
+    display: flex;
 
-                        <h3>
-                            CS50's Introduction to Programming with Scratch
-                        </h3>
+    gap: 20px;
+}
 
-                        <p class="certificate-provider">
-                            Harvard University
-                        </p>
+.project-links a {
+    color: var(--accent);
 
-                        <p>
-                            Learned programming fundamentals through Scratch,
-                            including algorithms, loops, variables, functions,
-                            and event-driven programming.
-                        </p>
+    font-size: 13px;
 
-                    </div>
+    font-weight: 700;
 
-                </div>
+    transition: var(--transition);
+}
 
+.project-links a:hover {
+    color: var(--accent-2);
 
-                <!-- Certificate 06 -->
+    transform: translateX(3px);
+}
 
-                <div class="certificate-card">
 
-                    <span class="certificate-number">
-                        06
-                    </span>
+/* =========================================================
+   EDUCATION TIMELINE
+========================================================= */
 
-                    <div class="certificate-content">
+.timeline {
+    position: relative;
 
-                        <h3>
-                            Best Student Performance & EMU Scholarship
-                        </h3>
+    max-width: 850px;
 
-                        <p class="certificate-provider">
-                            AALCCO - Cambrian Education Group
-                        </p>
+    margin: auto;
+}
 
-                        <p>
-                            Awarded Certificate of Merit for Outstanding
-                            Performance in the SSC Examination 2026 with
-                            a GPA of 4.39 and secured the EMU Project-2028
-                            Scholarship.
-                        </p>
+.timeline::before {
+    content: "";
 
-                    </div>
+    position: absolute;
 
-                </div>
+    left: 8px;
 
+    top: 0;
+    bottom: 0;
 
-                <!-- Certificate 07 -->
+    width: 2px;
 
-                <div class="certificate-card">
+    background:
+        linear-gradient(
+            to bottom,
+            var(--accent),
+            var(--accent-2),
+            transparent
+        );
+}
 
-                    <span class="certificate-number">
-                        07
-                    </span>
+.timeline-item {
+    position: relative;
 
-                    <div class="certificate-content">
+    padding-left: 45px;
 
-                        <h3>
-                            Build ATS-Winning CV
-                        </h3>
+    margin-bottom: 55px;
+}
 
-                        <p class="certificate-provider">
-                            Grameenphone Academy
-                        </p>
+.timeline-dot {
+    position: absolute;
 
-                        <p>
-                            Successfully completed professional training
-                            on crafting industry-standard, ATS-optimized
-                            resumes and professional profile alignment.
-                        </p>
+    left: 0;
+    top: 4px;
 
-                    </div>
+    width: 18px;
+    height: 18px;
 
-                </div>
+    border-radius: 50%;
 
+    background: var(--accent);
 
-                <!-- Certificate 08 -->
+    border: 4px solid var(--bg);
 
-                <div class="certificate-card">
+    box-shadow:
+        0 0 0 3px var(--accent);
+}
 
-                    <span class="certificate-number">
-                        08
-                    </span>
+.timeline-content {
+    padding: 25px;
 
-                    <div class="certificate-content">
+    border: 1px solid var(--border);
 
-                        <h3>
-                            AI Fluency for Students
-                        </h3>
+    border-radius: var(--radius);
 
-                        <p class="certificate-provider">
-                            Anthropic
-                        </p>
+    background: var(--surface);
 
-                        <p>
-                            Completed the AI Fluency for Students learning
-                            program, developing foundational knowledge and
-                            practical understanding of working with AI
-                            effectively.
-                        </p>
+    box-shadow: var(--shadow);
 
-                    </div>
+    transition: var(--transition);
+}
 
-                </div>
+.timeline-content:hover {
+    transform: translateX(7px);
 
-            </div>
+    border-color: var(--accent);
+}
 
-        </section>
+.timeline-content > span {
+    color: var(--accent);
 
+    font-size: 11px;
 
-        <!-- ================= CONTACT ================= -->
+    font-weight: 800;
 
-        <section class="section" id="contact">
+    letter-spacing: 2px;
+}
 
-            <div class="section-heading">
+.timeline-content h3 {
+    margin: 12px 0;
 
-                <p>CONTACT</p>
+    font-family: "Space Grotesk", sans-serif;
 
-                <h2>
-                    Let's Connect
-                </h2>
+    font-size: 21px;
+}
 
-                <p class="contact-intro">
-                    Have a question, want to discuss a project,
-                    or simply want to connect? Send me a message.
-                </p>
+.timeline-content p {
+    color: var(--muted);
 
-            </div>
+    font-size: 14px;
+}
 
 
-            <div class="contact-form-wrapper">
+/* =========================================================
+   ACTIVITIES
+========================================================= */
 
-                <form
-                    action="https://formsubmit.co/ashrafulrafsun10@gmail.com"
-                    method="POST"
-                    class="contact-form"
-                >
+.activity-grid {
+    display: grid;
 
-                    <input
-                        type="hidden"
-                        name="_subject"
-                        value="New Message From Ashraful Ferdous Rafsun's Portfolio"
-                    >
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-                    <input
-                        type="hidden"
-                        name="_captcha"
-                        value="false"
-                    >
+    gap: 24px;
 
-                    <input
-                        type="hidden"
-                        name="_template"
-                        value="table"
-                    >
+    margin-top: 30px;
+}
 
+.activity-card {
+    position: relative;
 
-                    <div class="form-group">
+    padding: 30px;
 
-                        <label for="name">
-                            Name
-                        </label>
+    min-height: 190px;
 
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Your Name"
-                            autocomplete="name"
-                            required
-                        >
+    background: var(--surface);
 
-                    </div>
+    border: 1px solid var(--border);
 
+    border-radius: 16px;
 
-                    <div class="form-group">
+    box-shadow: var(--shadow);
 
-                        <label for="email">
-                            Email
-                        </label>
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
 
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="your@email.com"
-                            autocomplete="email"
-                            required
-                        >
+.activity-card:hover {
+    transform: translateY(-6px);
 
-                    </div>
+    border-color: var(--accent);
+}
 
+.activity-number {
+    display: inline-block;
 
-                    <div class="form-group">
+    margin-bottom: 14px;
 
-                        <label for="message">
-                            Message
-                        </label>
+    font-size: 14px;
 
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="7"
-                            placeholder="Write your message..."
-                            required
-                        ></textarea>
+    font-weight: 700;
 
-                    </div>
+    letter-spacing: 2px;
 
+    color: var(--accent);
+}
 
-                    <button
-                        type="submit"
-                        class="contact-submit"
-                    >
-                        Send Message →
-                    </button>
+.activity-image {
+    width: 100%;
 
-                </form>
+    height: 220px;
 
-            </div>
+    object-fit: cover;
 
-        </section>
+    display: block;
 
-    </main>
+    margin: 0 0 24px;
 
+    border-radius: 14px;
 
-    <!-- ================= FOOTER ================= -->
+    border: 1px solid rgba(120, 160, 210, 0.25);
 
-    <footer>
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
 
-        <p>
-            © 2026 Ashraful Ferdous Rafsun
-        </p>
+.activity-card:hover .activity-image {
+    transform: scale(1.02);
 
-        <p>
-            Built with HTML, CSS & JavaScript.
-        </p>
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
+}
 
-    </footer>
+.activity-card h3 {
+    margin: 0 0 14px;
 
+    font-family: "Space Grotesk", sans-serif;
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    font-size: 21px;
 
-</body>
-</html>
+    line-height: 1.3;
+}
+
+.activity-card p {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+.activity-link {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    color: var(--accent);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.activity-link:hover {
+    color: var(--accent-2);
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+.certificate-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+    margin-top: 30px;
+}
+
+.certificate-card {
+    display: flex;
+
+    gap: 22px;
+
+    padding: 28px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--accent);
+}
+
+.certificate-number {
+    flex-shrink: 0;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--accent);
+}
+
+.certificate-content h3 {
+    margin: 0 0 8px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 20px;
+
+    line-height: 1.35;
+}
+
+.certificate-provider {
+    margin: 0 0 12px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: var(--accent);
+}
+
+.certificate-content p:not(.certificate-provider) {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-intro {
+    max-width: 650px;
+
+    margin: 18px auto 0;
+
+    text-align: center;
+
+    color: var(--muted);
+}
+
+.contact-form-wrapper {
+    max-width: 700px;
+
+    margin: 50px auto 0;
+}
+
+.contact-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.form-group label {
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 15px 16px;
+
+    border:
+        1px solid rgba(120, 160, 210, 0.35);
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: inherit;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 170px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #2196f3;
+
+    box-shadow:
+        0 0 0 3px rgba(33, 150, 243, 0.10);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    opacity: 0.55;
+}
+
+.contact-submit {
+    width: 100%;
+
+    padding: 15px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2196f3;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.contact-submit:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(33, 150, 243, 0.25);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: min(1180px, 92%);
+
+    margin: 0 auto;
+
+    padding: 35px 0 45px;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SELECTION + SCROLLBAR
+========================================================= */
+
+::selection {
+    background: var(--accent);
+
+    color: #ffffff;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-2);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding-top: 130px;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .hero-description {
+        max-width: 650px;
+    }
+
+    .hero-visual {
+        min-height: 500px;
+    }
+
+
+    /* About */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    /* Skills */
+
+    .skills-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .nav-container {
+        min-height: 68px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        width: 90%;
+
+        padding-top: 105px;
+
+        min-height: auto;
+
+        padding-bottom: 50px;
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(42px, 13vw, 62px);
+
+        letter-spacing: -2px;
+    }
+
+    .hero h2 {
+        font-size: 18px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+
+    /* Hero visual */
+
+    .hero-visual {
+        min-height: 380px;
+
+        margin-top: 0;
+    }
+
+    .orbit-outer {
+        width: 315px;
+        height: 315px;
+    }
+
+    .orbit-middle {
+        width: 265px;
+        height: 265px;
+    }
+
+    .orbit-inner {
+        width: 215px;
+        height: 215px;
+    }
+
+    .orbit-dot {
+        top:
+            calc(50% - 158px);
+    }
+
+
+    /* Profile */
+
+    .profile-wrap {
+        width: 240px;
+        height: 240px;
+    }
+
+    .profile-photo {
+        width: 215px;
+        height: 215px;
+    }
+
+    .profile-glow {
+        width: 195px;
+        height: 195px;
+    }
+
+
+    /* Developer card */
+
+    .hero-card {
+        width: 235px;
+
+        right: 50%;
+
+        transform:
+            translateX(50%)
+            rotate(3deg);
+
+        bottom: 8px;
+
+        padding: 17px;
+    }
+
+    .hero-card:hover {
+        transform:
+            translateX(50%)
+            rotate(0)
+            translateY(-6px);
+    }
+
+
+    /* Sections */
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+
+    /* About */
+
+    .about-stats {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 20px;
+    }
+
+
+    /* Skills */
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Projects */
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: auto;
+
+        padding: 28px;
+    }
+
+    .project-content {
+        margin-top: 40px;
+    }
+
+    .project-content h3 {
+        font-size: 24px;
+    }
+
+
+    /* Timeline */
+
+    .timeline-item {
+        padding-left: 32px;
+    }
+
+    .timeline::before {
+        left: 7px;
+    }
+
+    .timeline-dot {
+        width: 16px;
+        height: 16px;
+    }
+
+
+    /* Activities */
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .activity-card {
+        padding: 24px;
+    }
+
+    .activity-card h3 {
+        font-size: 19px;
+    }
+
+    .activity-card p {
+        font-size: 14px;
+    }
+
+
+    /* Certifications */
+
+    .certificate-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .certificate-card {
+        padding: 24px;
+
+        gap: 16px;
+    }
+
+    .certificate-content h3 {
+        font-size: 18px;
+    }
+
+    .certificate-content p:not(.certificate-provider) {
+        font-size: 14px;
+    }
+
+
+    /* Footer */
+
+    footer {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-bottom: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-visual {
+        min-height: 350px;
+    }
+
+    .orbit-outer {
+        width: 285px;
+        height: 285px;
+    }
+
+    .orbit-middle {
+        width: 240px;
+        height: 240px;
+    }
+
+    .orbit-inner {
+        width: 195px;
+        height: 195px;
+    }
+
+    .orbit-dot {
+        top:
+            calc(50% - 143px);
+    }
+
+    .profile-wrap {
+        width: 220px;
+        height: 220px;
+    }
+
+    .profile-photo {
+        width: 195px;
+        height: 195px;
+    }
+
+    .profile-glow {
+        width: 175px;
+        height: 175px;
+    }
+
+    .hero-card {
+        width: 220px;
+    }
+
+    .code-line {
+        font-size: 12px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .project-card {
+        padding: 23px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
