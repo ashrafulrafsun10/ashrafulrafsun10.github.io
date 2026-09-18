@@ -1,38 +1,20 @@
-// =========================================
-// THEME TOGGLE
-// =========================================
-
 const themeToggle = document.getElementById("themeToggle");
 
+const savedTheme = localStorage.getItem("theme");
 
-// Load saved theme
-
-const savedTheme = localStorage.getItem("portfolio-theme");
-
+// Default = LIGHT MODE
 if (savedTheme === "dark") {
-
     document.body.classList.add("dark-mode");
-
-    themeToggle.textContent = "☀";
-
+} else {
+    document.body.classList.remove("dark-mode");
 }
 
-
-// Toggle theme
-
 themeToggle.addEventListener("click", () => {
-
     document.body.classList.toggle("dark-mode");
 
-    const isDark =
-        document.body.classList.contains("dark-mode");
-
-    themeToggle.textContent =
-        isDark ? "☀" : "☾";
-
-    localStorage.setItem(
-        "portfolio-theme",
-        isDark ? "dark" : "light"
-    );
-
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
 });
