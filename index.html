@@ -72,6 +72,171 @@
         href="style.css">
 
 
+    <!-- Force a consistent light theme -->
+    <meta name="color-scheme" content="light">
+
+    <style id="forced-light-theme">
+
+        :root {
+            color-scheme: light !important;
+            --bg: #ffffff;
+            --background: #ffffff;
+            --surface: #ffffff;
+            --card: #ffffff;
+            --text: #172033;
+            --text-color: #172033;
+            --muted: #5b6474;
+            --border: #e5e7eb;
+        }
+
+        html,
+        body {
+            background: #ffffff !important;
+            color: #172033 !important;
+            color-scheme: light !important;
+        }
+
+        body,
+        main,
+        section,
+        header,
+        footer,
+        .navbar,
+        .nav-container,
+        .hero,
+        .section,
+        .hero-content,
+        .about-grid,
+        .about-text,
+        .about-stats,
+        .stat-card,
+        .focus-item,
+        .skills-grid,
+        .skill-card,
+        .projects-grid,
+        .project-card,
+        .project-content,
+        .timeline,
+        .timeline-item,
+        .timeline-content,
+        .activity-grid,
+        .activity-card,
+        .certificate-grid,
+        .certificate-card,
+        .certificate-content,
+        .contact-form-wrapper,
+        .contact-form,
+        .form-group {
+            color: #172033;
+        }
+
+        .navbar,
+        footer,
+        .stat-card,
+        .focus-item,
+        .skill-card,
+        .project-card,
+        .timeline-content,
+        .activity-card,
+        .certificate-card,
+        .contact-form-wrapper,
+        .contact-form {
+            background-color: #ffffff !important;
+        }
+
+        p,
+        li,
+        label,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .hero-description,
+        .project-category,
+        .certificate-provider,
+        .timeline-content span {
+            color: #172033;
+        }
+
+        .hero-label,
+        .section-heading > p,
+        .project-category,
+        .certificate-provider,
+        .timeline-content > span {
+            color: #526078;
+        }
+
+        input,
+        textarea,
+        select {
+            background: #ffffff !important;
+            color: #172033 !important;
+            border-color: #d1d5db !important;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #6b7280 !important;
+            opacity: 1;
+        }
+
+        a:not(.btn):not(.primary-btn):not(.secondary-btn):not(.contact-submit) {
+            color: #2457c5;
+        }
+
+        .profile-photo,
+        .activity-image {
+            background-color: #f3f4f6;
+        }
+
+        .stat-card,
+        .focus-item,
+        .skill-card,
+        .project-card,
+        .timeline-content,
+        .activity-card,
+        .certificate-card,
+        .contact-form-wrapper {
+            border-color: #e5e7eb;
+        }
+
+        /* Prevent the operating system from switching to dark mode */
+        @media (prefers-color-scheme: dark) {
+            html,
+            body {
+                background: #ffffff !important;
+                color: #172033 !important;
+            }
+        }
+
+        /* Override common dark-theme selectors */
+        html.dark,
+        body.dark,
+        .dark,
+        [data-theme="dark"] {
+            color-scheme: light !important;
+            background-color: #ffffff !important;
+            color: #172033 !important;
+        }
+
+        html.dark body,
+        body.dark main,
+        body.dark section,
+        body.dark header,
+        body.dark footer,
+        [data-theme="dark"] main,
+        [data-theme="dark"] section,
+        [data-theme="dark"] header,
+        [data-theme="dark"] footer {
+            background-color: #ffffff !important;
+            color: #172033 !important;
+        }
+
+    </style>
+
+
     <!-- Person Structured Data -->
     <script type="application/ld+json">
     {
@@ -104,6 +269,7 @@
 
 
 <body>
+
 
     <!-- ================================
          NAVIGATION
@@ -143,7 +309,6 @@
     </header>
 
 
-
     <!-- ================================
          MAIN
     ================================= -->
@@ -168,114 +333,63 @@
                     HELLO, I'M
                 </p>
 
-
                 <h1>
-                    Ashraful Ferdous
-                    <span>Rafsun</span>
+                    Ashraful Ferdous Rafsun
                 </h1>
 
-
                 <h2>
-                    Aerospace Engineering Aspirant & Developer
+                    Aerospace Engineering Aspirant &amp; Developer
                 </h2>
 
-
                 <p class="hero-description">
-                    I build interactive web experiences,
-                    technology-focused projects, and
-                    creative digital solutions while exploring
-                    aerospace, space technology, programming,
-                    and STEM.
+                    Passionate about aerospace engineering, space technology,
+                    STEM research, programming, and building meaningful projects.
                 </p>
-
 
                 <div class="hero-buttons">
 
-                    <a
-                        href="#projects"
-                        class="btn primary-btn">
-
-                        View My Projects
-
+                    <a href="#projects" class="btn btn-primary">
+                        Explore My Work
                     </a>
 
-
-                    <a
-                        href="#contact"
-                        class="btn secondary-btn">
-
+                    <a href="#contact" class="btn btn-secondary">
                         Contact Me
-
                     </a>
 
                 </div>
 
 
-                <div class="social-links">
+                <div class="hero-socials">
 
-                    <a
-                        href="https://github.com/ashrafulrafsun10/"
+                    <a href="https://github.com/ashrafulrafsun10/"
                         target="_blank"
                         rel="noopener noreferrer">
-
                         GitHub
-
                     </a>
 
-
-                    <a
-                        href="https://www.linkedin.com/in/ashrafulferdousrafsun/"
+                    <a href="https://www.linkedin.com/in/ashrafulferdousrafsun/"
                         target="_blank"
                         rel="noopener noreferrer">
-
                         LinkedIn
-
-                    </a>
-
-
-                    <a
-                        href="./RAFSUN%20FINAL%20RESUME%20(2).pdf"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        Resume
-
                     </a>
 
                 </div>
 
             </div>
-
 
 
             <!-- HERO PHOTO -->
 
-            <div class="hero-visual">
+            <div class="hero-image">
 
-                <div class="hero-orbit orbit-outer"></div>
-
-                <div class="hero-orbit orbit-middle"></div>
-
-                <div class="hero-orbit orbit-inner"></div>
-
-                <div class="orbit-dot"></div>
-
-
-                <div class="profile-wrap">
-
-                    <div class="profile-glow"></div>
-
-                    <img
-                        src="images/profile.jpg"
-                        alt="Ashraful Ferdous Rafsun"
-                        class="profile-photo">
-
-                </div>
+                <img
+                    src="images/profile.jpg"
+                    alt="Ashraful Ferdous Rafsun"
+                    class="profile-photo">
 
             </div>
 
         </section>
-
 
 
         <!-- ================================
@@ -283,179 +397,141 @@
         ================================= -->
 
         <section
-            class="section"
+            class="about section"
             id="about">
 
             <div class="section-heading">
 
-                <p>ABOUT ME</p>
+                <p>GET TO KNOW ME</p>
 
-                <h2>
-                    Building With Curiosity,
-                    Creativity & Purpose
-                </h2>
+                <h2>About Me</h2>
+
+                <p>
+                    A little introduction to who I am and what I do.
+                </p>
 
             </div>
 
 
             <div class="about-grid">
 
-
                 <div class="about-text">
 
-                    <p class="about-intro">
-                        I am an aspiring aerospace engineer
-                        and frontend developer with a strong
-                        interest in aerospace, space technology,
-                        programming, and STEM.
-                    </p>
-
+                    <h3>
+                        Driven by Curiosity and Innovation
+                    </h3>
 
                     <p>
-                        I enjoy turning ideas into practical
-                        projects. My work includes interactive
-                        web applications, space-focused tools,
-                        simulations, educational applications,
-                        and computational projects built using
-                        HTML, CSS, JavaScript, and other
-                        technologies.
+                        I am Ashraful Ferdous Rafsun, an aspiring aerospace
+                        engineer and developer with a strong interest in
+                        science, technology, engineering, and mathematics.
                     </p>
-
 
                     <p>
-                        Beyond coding, I am deeply interested
-                        in aircraft and space technology.
-                        I enjoy exploring engineering concepts,
-                        experimenting with technology, and
-                        learning through hands-on projects
-                        rather than relying only on theory.
+                        I enjoy exploring new ideas, learning technical
+                        concepts, developing digital projects, and discovering
+                        how engineering can solve real-world problems.
                     </p>
-
 
                     <p>
-                        I also explore photography, football,
-                        and freshwater aquarium ecosystem
-                        management. These activities help me
-                        develop creativity, teamwork, observation,
-                        patience, and practical problem-solving
-                        skills outside academics.
+                        My interests include aerospace engineering, space
+                        exploration, programming, scientific research, and
+                        continuous learning.
                     </p>
-
-
-                    <p>
-                        Currently, I am pursuing my higher
-                        secondary education in the Science group
-                        at Uttara High School and College while
-                        continuing to build my technical skills,
-                        projects, and experience for the future.
-                    </p>
-
-
-                    <div class="about-focus">
-
-
-                        <div class="focus-item">
-
-                            <span>01</span>
-
-                            <div>
-
-                                <h3>
-                                    Aerospace & Space
-                                </h3>
-
-                                <p>
-                                    Exploring aircraft design,
-                                    space technology, and
-                                    engineering concepts.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="focus-item">
-
-                            <span>02</span>
-
-                            <div>
-
-                                <h3>
-                                    Web Development
-                                </h3>
-
-                                <p>
-                                    Building responsive and
-                                    interactive web applications
-                                    through hands-on projects.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="focus-item">
-
-                            <span>03</span>
-
-                            <div>
-
-                                <h3>
-                                    Continuous Learning
-                                </h3>
-
-                                <p>
-                                    Developing technical and
-                                    problem-solving skills through
-                                    projects and self-directed
-                                    learning.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
 
                 </div>
-
 
 
                 <div class="about-stats">
 
                     <div class="stat-card">
-                        <strong>08</strong>
-                        <span>Projects</span>
+
+                        <h3>STEM</h3>
+
+                        <p>
+                            Science &amp; Technology
+                        </p>
+
                     </div>
 
-                    <div class="stat-card">
-                        <strong>06</strong>
-                        <span>Activities & ECAs</span>
-                    </div>
 
                     <div class="stat-card">
-                        <strong>08</strong>
-                        <span>Certifications</span>
+
+                        <h3>Code</h3>
+
+                        <p>
+                            Programming &amp; Development
+                        </p>
+
                     </div>
 
-                    <div class="stat-card">
-                        <strong>01</strong>
-                        <span>Photography Portfolio</span>
-                    </div>
 
                     <div class="stat-card">
-                        <strong>∞</strong>
-                        <span>Ideas</span>
+
+                        <h3>Space</h3>
+
+                        <p>
+                            Aerospace &amp; Exploration
+                        </p>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <h3>Growth</h3>
+
+                        <p>
+                            Research &amp; Learning
+                        </p>
+
                     </div>
 
                 </div>
 
             </div>
 
-        </section>
 
+            <div class="focus-grid">
+
+                <div class="focus-item">
+
+                    <h3>Aerospace Engineering</h3>
+
+                    <p>
+                        Learning about aircraft, spacecraft, flight,
+                        propulsion, and aerospace systems.
+                    </p>
+
+                </div>
+
+
+                <div class="focus-item">
+
+                    <h3>Technology</h3>
+
+                    <p>
+                        Exploring programming, software, and emerging
+                        technologies.
+                    </p>
+
+                </div>
+
+
+                <div class="focus-item">
+
+                    <h3>STEM Research</h3>
+
+                    <p>
+                        Building knowledge through experimentation,
+                        research, and problem-solving.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
 
 
         <!-- ================================
@@ -463,259 +539,124 @@
         ================================= -->
 
         <section
-            class="section"
+            class="skills section"
             id="skills">
 
             <div class="section-heading">
 
-                <p>MY SKILLS</p>
+                <p>WHAT I AM LEARNING</p>
 
-                <h2>
-                    Technologies I Work With
-                </h2>
+                <h2>Skills &amp; Interests</h2>
+
+                <p>
+                    Areas of technology and engineering that I explore.
+                </p>
 
             </div>
 
 
             <div class="skills-grid">
 
-                <div class="skill-card">
-                    <span>01</span>
-                    <h3>HTML5</h3>
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        🚀
+                    </div>
+
+                    <h3>Aerospace Engineering</h3>
+
                     <p>
-                        Semantic and structured web pages.
+                        Aerospace concepts, aircraft, spacecraft,
+                        and space technology.
                     </p>
-                </div>
+
+                </article>
 
 
-                <div class="skill-card">
-                    <span>02</span>
-                    <h3>CSS3</h3>
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        💻
+                    </div>
+
+                    <h3>Programming</h3>
+
                     <p>
-                        Responsive layouts, animations,
-                        and modern interfaces.
+                        Programming fundamentals, coding practice,
+                        and software development.
                     </p>
-                </div>
+
+                </article>
 
 
-                <div class="skill-card">
-                    <span>03</span>
-                    <h3>JavaScript</h3>
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        🔬
+                    </div>
+
+                    <h3>Scientific Research</h3>
+
                     <p>
-                        Interactive interfaces and
-                        dynamic web functionality.
+                        Research, experimentation, analysis,
+                        and scientific thinking.
                     </p>
-                </div>
+
+                </article>
 
 
-                <div class="skill-card">
-                    <span>04</span>
-                    <h3>Git & GitHub</h3>
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        🌐
+                    </div>
+
+                    <h3>Web Development</h3>
+
                     <p>
-                        Version control and project
-                        management.
+                        Website structure, web technologies,
+                        and responsive design.
                     </p>
-                </div>
+
+                </article>
 
 
-                <div class="skill-card">
-                    <span>05</span>
-                    <h3>Canvas</h3>
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        🧩
+                    </div>
+
+                    <h3>Problem Solving</h3>
+
                     <p>
-                        Interactive visualizations
-                        and animations.
+                        Logical reasoning, analytical thinking,
+                        and practical problem-solving.
                     </p>
-                </div>
+
+                </article>
 
 
-                <div class="skill-card">
-                    <span>06</span>
-                    <h3>UI Design</h3>
+                <article class="skill-card">
+
+                    <div class="skill-icon">
+                        📚
+                    </div>
+
+                    <h3>Continuous Learning</h3>
+
                     <p>
-                        Clean, modern, and user-focused
-                        interfaces.
+                        Exploring new concepts and improving
+                        technical knowledge.
                     </p>
-                </div>
+
+                </article>
 
             </div>
 
         </section>
 
 
-
-        <!-- ================================
-             PROJECTS
-        ================================= -->
-
-        <section
-            class="section"
-            id="projects">
-
-            <div class="section-heading">
-
-                <p>MY WORK</p>
-
-                <h2>
-                    Featured Projects
-                </h2>
-
-            </div>
-
-
-            <div class="projects-grid">
-
-
-                <article class="project-card">
-
-                    <div class="project-number">
-                        01
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            JAVASCRIPT • CANVAS
-                        </p>
-
-                        <h3>
-                            NASA Mission Control Dashboard
-                        </h3>
-
-                        <p>
-                            An interactive NASA-inspired mission
-                            control dashboard featuring rocket launch
-                            animation, countdown controls, live
-                            telemetry, mission status monitoring,
-                            orbit visualization, and mission logs.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Canvas</span>
-                        </div>
-
-                        <div class="project-links">
-
-                            <a
-                                href="https://ashrafulrafsun10.github.io/nasa-mission-control-dashboard/"
-                                target="_blank"
-                                rel="noopener noreferrer">
-                                Live Demo →
-                            </a>
-
-                            <a
-                                href="https://github.com/ashrafulrafsun10/nasa-mission-control-dashboard"
-                                target="_blank"
-                                rel="noopener noreferrer">
-                                GitHub →
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="project-card">
-
-                    <div class="project-number">
-                        02
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            JAVASCRIPT • EDUCATION
-                        </p>
-
-                        <h3>
-                            Scholarship Eligibility Checker
-                        </h3>
-
-                        <p>
-                            An interactive web application designed
-                            to help students evaluate scholarship
-                            eligibility using user-provided academic
-                            and profile information.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-
-                        <div class="project-links">
-
-                            <a
-                                href="https://ashrafulrafsun10.github.io/scholarship-eligibility-checker/"
-                                target="_blank"
-                                rel="noopener noreferrer">
-                                Live Demo →
-                            </a>
-
-                            <a
-                                href="https://github.com/ashrafulrafsun10/scholarship-eligibility-checker"
-                                target="_blank"
-                                rel="noopener noreferrer">
-                                GitHub →
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="project-card">
-
-                    <div class="project-number">
-                        03
-                    </div>
-
-                    <div class="project-content">
-
-                        <p class="project-category">
-                            JAVASCRIPT • EDUCATION
-                        </p>
-
-                        <h3>
-                            Global GPA Converter
-                        </h3>
-
-                        <p>
-                            A responsive GPA conversion tool that
-                            converts academic results between grading
-                            systems with interactive calculations,
-                            result visualization, and theme support.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-
-                        <div class="project-links">
-
-                            <a
-                                href="https://ashrafulrafsun10.github.io/global-gpa-converter/"
-                                target="_blank"
-                                rel="noopener noreferrer">
-                                Live Demo →
-                            </a>
-
-                            <a
-                                href="https://github.com/ashrafulrafsun10/global-gpa-converter"
-                                target="_blank"
-                                rel="noopener noreferrer">
-                                GitHub →
-                            </a>
-
-                     
+        <!-- PART 1 ENDS HERE.
+             Continue directly with PART 2.
+        -->
